@@ -12,46 +12,75 @@ Glaucoma is a chronic eye disease that can lead to blindness if untreated, affec
 - To propose an automatic detection approach using deep convolutional neural networks (CNNs), specifically ResNet-50 and GoogLeNet models.
 - To evaluate the performance of these models in classifying early and advanced glaucoma stages.
 
-## Datasets
-The study utilizes several public datasets, including:
-- SINDI, SCES, SIMES, ARIA, DRISHTI-GS, RIM-ONE, RIGA, ORIGA-LIGHT, ACRIMA, STARE, ONHSD, and DRIVE.
-- A primary dataset of 1544 fundus images categorized into no glaucoma, early glaucoma, and advanced glaucoma, augmented to 5430 images.
-- The RIM-ONE dataset with 158 images for performance evaluation.
+## Requirements
 
-## Methodology
-1. **Data Collection:** Retinal images are collected from multiple datasets.
-2. **Preprocessing:** Image quality is enhanced using histogram equalization, and data augmentation techniques are applied.
-3. **Feature Extraction:** Deep neural networks extract features from retinal images.
-4. **Model Training:** ResNet-50 and GoogLeNet architectures are trained using the Caffe deep learning framework on a NVIDIA GeForce GTX 1080Ti GPU.
-5. **Classification:** Machine learning classifiers (ANNs and SVMs) are used to classify retinal images based on extracted features.
+To run this project, you need to install and set up MATLAB and the required toolboxes and libraries.
 
-## Implementation
-The implementation involves training deep learning models using the following frameworks and tools:
-- **Framework:** Caffe deep learning framework
-- **Hardware:** NVIDIA GeForce GTX 1080Ti GPU
+### Prerequisites
 
-## Results
-- The GoogLeNet model outperforms ResNet-50 in detecting both early and advanced stages of glaucoma.
-- The combination of deep neural networks and logistic regression-based classifiers shows significant improvements in classification accuracy, sensitivity, and specificity compared to existing systems.
+- MATLAB R2019b or later (recommended)
+- A computer with a CUDA-enabled GPU (for training deep learning models)
+- MATLAB toolboxes:
+  - Deep Learning Toolbox
+  - Image Processing Toolbox
+  - Statistics and Machine Learning Toolbox
+  - Computer Vision Toolbox
+  - Parallel Computing Toolbox (for GPU support)
 
-## Performance Evaluation
-The models are evaluated based on the following metrics:
-- Accuracy
-- Sensitivity
-- Specificity
-- Area under the receiver operating characteristic (ROC) curve
+### Installation
 
-## Challenges and Future Directions
-- The need for large annotated datasets.
-- Variability in image quality.
-- Generalizability of models.
-- Future research directions include improving algorithm robustness and integrating multimodal data.
+1. **MATLAB Installation**:
+    - Download and install MATLAB from the [MathWorks website](https://www.mathworks.com/).
+    - During the installation, ensure that you select the necessary toolboxes listed above.
 
-## Conclusion
-The proposed system accurately classifies glaucomatous retinal images using a combination of deep learning and machine learning techniques. It has the potential to enhance early detection and treatment of glaucoma, ultimately reducing the risk of blindness.
+2. **Set Up MATLAB Environment**:
+    - Open MATLAB.
+    - Add the project folder to the MATLAB path:
+      ```matlab
+      addpath('path_to_project_folder');
+      ```
 
-## How to Use
-1. **Clone the repository:**
-   ```bash
-   $ git clone https://github.com/username/repository-name.git
-   $ cd repository-name
+### MATLAB Toolboxes
+
+Ensure the following toolboxes are installed and up-to-date:
+
+- **Deep Learning Toolbox**: For designing and implementing deep learning models.
+- **Image Processing Toolbox**: For preprocessing and augmenting images.
+- **Statistics and Machine Learning Toolbox**: For implementing traditional machine learning algorithms.
+- **Computer Vision Toolbox**: For computer vision tasks and functions.
+- **Parallel Computing Toolbox**: For utilizing GPU capabilities to accelerate deep learning model training.
+
+### Running the Program
+
+To train and evaluate the models, use the relevant MATLAB scripts:
+
+1. **Train the Models**:
+    ```matlab
+    trainModel('resnet50');
+    trainModel('googlenet');
+    ```
+
+2. **Evaluate the Model**:
+    ```matlab
+    evaluateModel('resnet50');
+    evaluateModel('googlenet');
+    ```
+
+## Usage
+
+Here are some examples of how to use the project:
+
+```matlab
+% Load the trained model
+model = load('path_to_model/model.mat');
+
+% Predict using the model
+results = predict(model, imread('path_to_image/image.jpg'));
+
+% Display the results
+disp(results);
+
+
+
+
+
