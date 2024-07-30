@@ -1,0 +1,41 @@
+classifiers = {'MLP', 'RF', 'SVM-RBF', 'SVM', 'CNN', 'ResNet', 'GoogleNet', 'AlexNet', 'VGGNet', 'kNN', 'SVM', 'DT', 'RF', 'NB', 'LR'};
+AUC = [0.835, 0.930, 0.827, 0.930, 0.835, 0.930, 0.835, 0.930, 0.732, 0.733, 0.831, 0.997, 0.773, 0.969, 0.571, 0.963, 0.706, 0.912, 0.924, 0.971, 0.854, 0.953, 0.937, 0.990, 0.918, 0.967, 0.836, 1.000];
+Recall = [0.835, 0.930, 0.827, 0.930, 0.835, 0.930, 0.835, 0.930, 0.732, 0.733, 0.831, 0.997, 0.773, 0.969, 0.571, 0.963, 0.706, 0.912, 0.924, 0.971, 0.854, 0.953, 0.937, 0.990, 0.918, 0.967, 0.836, 1.000];
+Precision = [0.835, 0.930, 0.827, 0.930, 0.835, 0.930, 0.835, 0.930, 0.732, 0.733, 0.831, 0.997, 0.773, 0.969, 0.571, 0.963, 0.706, 0.912, 0.924, 0.971, 0.854, 0.953, 0.937, 0.990, 0.918, 0.967, 0.836, 1.000];
+F1 = [0.835, 0.930, 0.827, 0.930, 0.835, 0.930, 0.835, 0.930, 0.732, 0.733, 0.831, 0.997, 0.773, 0.969, 0.571, 0.963, 0.706, 0.912, 0.924, 0.971, 0.854, 0.953, 0.937, 0.990, 0.918, 0.967, 0.836, 1.000];
+Accuracy = [0.835, 0.930, 0.827, 0.930, 0.835, 0.930, 0.835, 0.930, 0.732, 0.733, 0.831, 0.997, 0.773, 0.969, 0.571, 0.963, 0.706, 0.912, 0.924, 0.971, 0.854, 0.953, 0.937, 0.990, 0.918, 0.967, 0.836, 1.000];
+figure;
+bar(AUC);
+title('Comparison of Triage Systems based on AUC');
+xlabel('Classifiers');
+ylabel('AUC');
+set(gca, 'XTickLabel', classifiers, 'XTick', 1:numel(classifiers), 'XTickLabelRotation', 45);
+
+figure;
+bar(Recall);
+title('Comparison of Triage Systems based on Recall');
+xlabel('Classifiers');
+ylabel('Recall');
+set(gca, 'XTickLabel', classifiers, 'XTick', 1:numel(classifiers), 'XTickLabelRotation', 45);
+
+figure;
+bar(Precision);
+title('Comparison of Triage Systems based on Precision');
+xlabel('Classifiers');
+ylabel('Precision');
+set(gca, 'XTickLabel', classifiers, 'XTick', 1:numel(classifiers), 'XTickLabelRotation', 45);
+
+figure;
+bar(F1);
+title('Comparison of Triage Systems based on F1');
+xlabel('Classifiers');
+ylabel('F1 Score');
+set(gca, 'XTickLabel', classifiers, 'XTick', 1:numel(classifiers), 'XTickLabelRotation', 45);
+
+figure;
+bar(Accuracy);
+title('Comparison of Triage Systems based on Accuracy');
+xlabel('Classifiers');
+ylabel('Accuracy');
+set(gca, 'XTickLabel', classifiers, 'XTick', 1:numel(classifiers), 'XTickLabelRotation', 45);
+
